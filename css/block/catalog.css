@@ -76,3 +76,8 @@
 .catalog .catalog__form-btn:hover {
     background-color: var(--color-pr-hover);
 }
+
+.disabled {
+    pointer-events: none;
+    opacity: .5;
+}

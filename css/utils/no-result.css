@@ -8,6 +8,7 @@
     flex-direction: column;
     align-items: flex-start;
     gap: var(--img-gap);
+    color: var(--text-color);
 }
 .no-result .no-result__img {
     max-width: var(--img-size);

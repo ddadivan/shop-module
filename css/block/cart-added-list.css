@@ -177,6 +177,11 @@
     right: 0;
 }
 
+.disabled {
+    opacity: .5;
+    pointer-events: none;
+}
+
 .cart-added-list .cart-added-list__item-btn-minus {
     top: calc(var(--h) * 2);
 }

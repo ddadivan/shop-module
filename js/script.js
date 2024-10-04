@@ -1,12 +1,39 @@
-// Функція добавлення класу активності
-function setActive(e) {
+import { cartInit } from "./app/cart/cartInit.js";
+import { homePage } from "./pages/home.js";
+import { orderPage } from "./pages/order.js";
+import { searchPage } from "./pages/searchPage.js";
+import { body, toggleButtons } from "./utils/elements.js";
+import { setActive } from "./utils/utils.js";
 
-    // Отримуємо блок з яким потрібно працювати
-    const box = e.target.getAttribute('data-box-toggle');
+// Добавляємо товари в корзину
+cartInit();
 
-    // Добавляємо або забираємо клас активності
-    document.querySelector(box).classList.toggle('show');
+// Вішажмо універсальну функнкцію, яка буде щосьвідкривати або закривати
+toggleButtons.forEach((el) => {
 
-    // Добавляємо кнопці клас актисності
-    e.target.classList.toggle('active');
+    // Вішаємо функцію в якій до елементу добавляється show
+    el.onclick = setActive;
+})
+
+// Отримуємо мітку сторінки
+const page = body.classList[0];
+
+switch (page) {
+    case 'page-home':
+
+        homePage();
+
+        break;
+
+    case 'page-search':
+
+        searchPage();
+
+        break;
+
+    case 'page-order':
+
+        orderPage();
+
+        break;
 }
